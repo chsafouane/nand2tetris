@@ -11,5 +11,14 @@ CHIP Mux {
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+    Not(in=sel , out=notsel );
+    // If (sel==0) out=a <=> If (not_sel == 1) out=a
+    // If sel==0, NOT(sel)=1 => Not(sel) and a will
+    // always take the value of a when sel==0
+    And(a=notsel , b=a , out=notselanda );
+
+    // If (sel==1) out=b 
+    And(a=sel , b=b , out=selandb );
+
+    Or(a=notselanda , b=selandb , out=out );
 }
