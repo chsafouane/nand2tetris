@@ -20,5 +20,5 @@ CHIP DMux8Way {
     PARTS:
     DMux(in=in , sel=sel[2] , a=firstWire , b=secondWire );
     DMux4Way(in=firstWire , sel=sel[0..1] , a=a , b=b , c=c , d=d );
-    DMux4Way(in=secondWire , sel=sel[0..1] , a=e , b=f , c=g);
+    DMux4Way(in=secondWire , sel=sel[0..1] , a=e , b=f , c=g , d=h);
 }
